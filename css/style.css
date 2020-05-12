@@ -1,0 +1,65 @@
+/* Aula inicial :D */
+
+body {
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%23f5f5f5' fill-opacity='1.00' fill-rule='evenodd'/%3E%3C/svg%3E");
+  
+  font-family: "PT Mono";
+  margin: 0;
+}
+
+.nav-menu {
+/*   background-color: tomato; */
+  
+  background-image: linear-gradient(45deg, #FF6347 0%, #FF4550 20%);
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+}
+
+.nav-menu ul {
+  display: flex;
+  /* Funciona porque usamos o display: flex */
+  justify-content: space-around;
+}
+
+.nav-menu li {
+  /* Alterando o estilo da lista dentro do elemento de class 'menu'*/
+  list-style: none;
+/*   padding: 1.5%; */
+}
+
+.header {
+  background-image: linear-gradient(45deg, #000000 0%, #303040 100%);
+  
+/*   background-color: #000000; */
+  width: 100vw;
+  height: 30vh;
+/*   position: relative; */
+/*   display: block; */
+  padding: 7.75em 0 5.25em; /* levar isso para uma div interna */
+}
+
+a {
+  /* Estou removendo o underscore dos elementos <a> */
+  color: white;
+  text-decoration: none;
+}
+
+/* Pseudo classe do elemento <a> */
+a:hover {
+  text-decoration: underline;
+}
+
+.site-subtitle, 
+.site-title {
+  color: whitesmoke;
+  text-align: center;
+}
+
+.site-subtitle {
+  font-style: italic;
+}
