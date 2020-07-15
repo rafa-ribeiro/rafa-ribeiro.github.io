@@ -34,6 +34,7 @@ header {
   position: fixed;
   top: 0;
   width: 100vw;
+  z-index: 1;
 }
 
 .nav-menu ul {
@@ -48,19 +49,17 @@ header {
 }
 
 .nav-menu a {
-    padding: 10px;
-    /* background-color: blue; */
-    display: block;
+  padding: 10px;
+  /* background-color: blue; */
+  display: block;
+  
+  /* Pode se usar com o background-color, com image não rolou */
+  /* transition: background-image 1s, color 1s; */
 }
 
-/* .header {
+.nav-menu a:hover {
   background-image: linear-gradient(45deg, #000000 0%, #303040 100%);
-  
-  background-color: #000000;
-  width: 50vw;
-  height: 30vh;
-  padding: 7.75em 0 5.25em; /* levar isso para uma div interna
-} */
+}
 
 a {
   /* Estou removendo o underscore dos elementos <a> */
@@ -71,6 +70,20 @@ a {
 /* Pseudo classe do elemento <a> */
 a:hover {
   text-decoration: underline;
+}
+
+.titulo {
+  transform: scale(.2) translateY(50vh);  
+  opacity: 0;
+
+  animation: linear 2s animacaoTitulo forwards;
+}
+
+@keyframes animacaoTitulo {
+  to {
+    opacity: 1;
+    transform: scale(1); 
+  }
 }
 
 .site-subtitle, 
@@ -87,12 +100,60 @@ a:hover {
   font-style: italic;
 }
 
+.sobre,
+.contato,
 .portfolio {
     padding: 2em;
+    /* min-height: 100vh; */
 }
 
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    margin-left: auto; /* centraliza conteúdo, só funciona na horizo ntal */
+    margin-right: auto;
+  }
+}
+
+.sobre .avatar {
+  float: right;
+}
+
+.sobre .avatar img {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  margin-left: 2em;
+  /* border-radius: 50%; */
+
+  clip-path: polygon(25% 0%, 0% 50%, 25% 100%, 100% 100%, 75% 50%, 100% 0%);
+}
+
+.sobre p {
+  text-indent: 2em;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+.contato .icons {
+  text-align: center;
+}
+
+.contato h2,
 .portfolio h2 {
     margin-bottom: 1em;
+}
+
+.contato a {
+  color: #FF6347;
+  font-size: 30px;
+  transition: text-shadow 1s;
+}
+
+.contato a:active,
+.contato a:hover {
+  text-decoration: none;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .img-portfolio {
@@ -100,6 +161,12 @@ a:hover {
     width: 250px;
     object-fit: cover;
     object-position: left;
+    transform: scale(1);
+    transition: transform 0.5s;
+}
+
+.img-portfolio:hover {
+  transform: scale(1.2);
 }
 
 .portfolio .grid {
@@ -117,6 +184,6 @@ a:hover {
 @media (min-width: 930px) {
     .portfolio .grid {
         grid-template-columns: repeat(3, 310px);
-        height: calc(70vh);
+        /* height: calc(70vh); */
     }
 }
